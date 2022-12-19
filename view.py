@@ -17,8 +17,7 @@ def view_data_im(data):
 def view_data_ex(request, data):
     if len(data) == 1:
         print(f'\nПо запросу "{request}" получена запись:')
-        for i in data:
-            print(f'*{i}')
+        print(f'*{", ".join(data)}')
     elif len(data) > 1:
         print(f'\nПо запросу "{request}" получены записи:')
         for i in data:
