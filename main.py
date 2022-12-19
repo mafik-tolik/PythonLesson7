@@ -1,3 +1,4 @@
-import controller as contr
+import controller
 
-contr.button_click_first()
+# controller.button_click_first()  # первый способ
+controller.button_click_second()  # второй способ

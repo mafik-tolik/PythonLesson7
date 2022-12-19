@@ -1,16 +1,25 @@
 def choice():
     some_str = input(
-        'Введите "0" (чтобы сделать запись в справочнике), или введите "1" (чтобы получить запись из справочника): ')
+        '\nВведите "0" (чтобы сделать запись в справочнике), или введите "1" (чтобы получить запись из справочника): ')
     return some_str
 
 
 def view_data_im(data):
-    print(f'\nСоздана запись:')
-    print(f'*{", ".join(data)}')
+    if len(data) == 4:
+        print(f'\nСоздана запись:')
+        print(f'*{", ".join(data)}')
+    else:
+        print(f'\nСозданы записи:')
+        for i in data:
+            print(f'*{", ".join(i)}')
 
 
 def view_data_ex(request, data):
-    if data != "":
+    if len(data) == 1:
+        print(f'\nПо запросу "{request}" получена запись:')
+        for i in data:
+            print(f'*{i}')
+    elif len(data) > 1:
         print(f'\nПо запросу "{request}" получены записи:')
         for i in data:
             print(f'*{i}')
